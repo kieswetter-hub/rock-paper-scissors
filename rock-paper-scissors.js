@@ -31,8 +31,12 @@ if userScore is greater than computerScore
 
 /* Code */
 
+/* define variables */
 const gameOptions = ["rock", "paper", "scissors"];
 console.log(gameOptions);
+
+let userScore = 0;
+let computerScore = 0;
 
 /* function for computer choice */
 function randomChoice (gameOptions) {
@@ -40,32 +44,40 @@ function randomChoice (gameOptions) {
     return(randomChoice);
 }
 
-/* get computer choice */
-const computerChoice = randomChoice(gameOptions);
-console.log(computerChoice);
-
-/* prompt and get user choice */
-userChoice = prompt("Rock paper or scissors?");
-console.log(userChoice);
-
+/* function for playing a round */
 function playRound(userChoice, computerChoice) {
     if (userChoice === "rock" && computerChoice === "paper") {
+        computerScore++;
         console.log("you lose");
     } else if (userChoice === "paper" && computerChoice === "scissors") {
+        computerScore++;
         console.log("you lose");
     } else if (userChoice === "scissors" && computerChoice === "rock") {
+        computerScore++;
         console.log("you lose");
-    } else if (userChoice === computerChoice) {
-            console.log("it's a tie");
+    } else if (userChoice === computerChoice) {    
+        console.log("it's a tie");
     } else {
+        userScore++;
         console.log("you win!");
     }
 }
 
-playRound(userChoice, computerChoice);
+/* actual game play */
 
-let userScore = 0;
-let computerScore = 0;
+do  {
+    /* get computer choice */
+    const computerChoice = randomChoice(gameOptions);
+    console.log(computerChoice);
 
-console.log(userScore);
-console.log(computerScore);
+    /* prompt and get user choice */
+    userChoice = prompt("Rock paper or scissors?");
+    console.log(userChoice);
+
+    /* play a round */
+    playRound(userChoice, computerChoice);
+    console.log(userScore);
+    console.log(computerScore);
+
+} while (userScore < 5 && computerScore < 5);
+
