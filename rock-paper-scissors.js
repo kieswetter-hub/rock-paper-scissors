@@ -63,6 +63,15 @@ function playRound(userChoice, computerChoice) {
     }
 }
 
+/* function for announcing the final score */
+function result(userScore, computerScore) {
+    if (userScore > computerScore) {
+        console.log(`You won! ${userScore} to ${computerScore}`);
+    } else {
+        console.log(`You lost :( ${computerScore} to ${userScore}`)
+    }
+}
+
 /* actual game play */
 
 do  {
@@ -84,3 +93,4 @@ do  {
 
 } while (userScore < 5 && computerScore < 5);
 
+result(userScore, computerScore)
