@@ -71,7 +71,10 @@ do  {
     console.log(computerChoice);
 
     /* prompt and get user choice */
-    userChoice = prompt("Rock paper or scissors?").toLowerCase();
+    userChoice = prompt("rock, paper, scissors?").toLowerCase();
+    while ((userChoice != "rock") && (userChoice != "paper") && (userChoice != "scissors")) {
+        userChoice = prompt(`${userChoice} is not valid. Please pick either rock, paper or scissors`);
+    }
     console.log(userChoice);
 
     /* play a round */
