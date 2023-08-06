@@ -1,44 +1,6 @@
 /* rock paper scissors */
 
-/* pseudocode 
-create list with text values: rock, paper, or scissors
-randomly choose one for computer choice and store as variable computerChoice
-prompty user for choice and store as variable userChoice
-
-define values:
-rock greater than scissors
-paper greater than rock
-scissors greater than paper
-
-create variable computerScore
-create variable userScore
-
-if computerChoice is greater than userChoice 
-    return message you lose
-    add one to computerScore
-if userChoice is greater than computerChoice 
-    return message you win
-    add one to userScore
-
-loop game for five rounds
-
-after five rounds 
-if computerScore is greater than userScore
-    return you lost
-if userScore is greater than computerScore
-    return you won
-*/
-
-/* Code */
-
-/* define variables */
-const gameOptions = ["rock", "paper", "scissors"];
-console.log(gameOptions);
-
-let userScore = 0;
-let computerScore = 0;
-
-/* function for computer choice */
+/* function to randomly generate computer choice */
 function randomChoice (gameOptions) {
     const randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
     return(randomChoice);
@@ -73,6 +35,12 @@ function result(userScore, computerScore) {
 }
 
 /* actual game play */
+
+const gameOptions = ["rock", "paper", "scissors"];
+console.log(gameOptions);
+
+let userScore = 0;
+let computerScore = 0;
 
 do  {
     /* get computer choice */
