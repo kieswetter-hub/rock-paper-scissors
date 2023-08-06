@@ -26,5 +26,28 @@ after five rounds
 if computerScore is greater than userScore
     return you lost
 if userScore is greater than computerScore
-    return you win
+    return you won
 */
+
+/* Code */
+
+const gameOptions = ["rock", "paper", "scissors"];
+console.log(gameOptions);
+
+/* function for computer choice */
+function randomChoice (gameOptions) {
+    var randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
+    return(randomChoice);
+}
+
+var computerChoice = randomChoice(gameOptions);
+console.log(computerChoice);
+
+userChoice = prompt("Rock paper or scissors?");
+console.log(userChoice);
+
+let userScore = 0;
+let computerScore = 0;
+
+console.log(userScore);
+console.log(computerScore);
