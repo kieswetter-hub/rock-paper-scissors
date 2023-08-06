@@ -48,18 +48,18 @@ function randomChoice (gameOptions) {
 function playRound(userChoice, computerChoice) {
     if (userChoice === "rock" && computerChoice === "paper") {
         computerScore++;
-        console.log("you lose");
+        console.log(`you lose! ${computerChoice} beats ${userChoice}`);
     } else if (userChoice === "paper" && computerChoice === "scissors") {
         computerScore++;
-        console.log("you lose");
+        console.log(`you lose! ${computerChoice} beats ${userChoice}`);
     } else if (userChoice === "scissors" && computerChoice === "rock") {
         computerScore++;
-        console.log("you lose");
+        console.log(`you lose! ${computerChoice} beats ${userChoice}`);
     } else if (userChoice === computerChoice) {    
         console.log("it's a tie");
     } else {
         userScore++;
-        console.log("you win!");
+        console.log(`you win! ${userChoice} beats ${computerChoice}`);
     }
 }
 
@@ -71,7 +71,7 @@ do  {
     console.log(computerChoice);
 
     /* prompt and get user choice */
-    userChoice = prompt("Rock paper or scissors?");
+    userChoice = prompt("Rock paper or scissors?").toLowerCase();
     console.log(userChoice);
 
     /* play a round */
