@@ -36,15 +36,33 @@ console.log(gameOptions);
 
 /* function for computer choice */
 function randomChoice (gameOptions) {
-    var randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
+    const randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
     return(randomChoice);
 }
 
-var computerChoice = randomChoice(gameOptions);
+/* get computer choice */
+const computerChoice = randomChoice(gameOptions);
 console.log(computerChoice);
 
+/* prompt and get user choice */
 userChoice = prompt("Rock paper or scissors?");
 console.log(userChoice);
+
+function playRound(userChoice, computerChoice) {
+    if (userChoice === "rock" && computerChoice === "paper") {
+        console.log("you lose");
+    } else if (userChoice === "paper" && computerChoice === "scissors") {
+        console.log("you lose");
+    } else if (userChoice === "scissors" && computerChoice === "rock") {
+        console.log("you lose");
+    } else if (userChoice === computerChoice) {
+            console.log("it's a tie");
+    } else {
+        console.log("you win!");
+    }
+}
+
+playRound(userChoice, computerChoice);
 
 let userScore = 0;
 let computerScore = 0;
