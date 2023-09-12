@@ -1,7 +1,6 @@
 /* rock paper scissors */
 const gameOptions = ["rock", "paper", "scissors"];
 
-
 /* function to randomly generate computer choice */
 function randomChoice (gameOptions) {    
     const randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
@@ -12,10 +11,6 @@ let userScore = 0;
 let computerScore = 0;
 
 /* function for playing the game */
-
-function buttonFunction(){
-    document.getElementById("buttonAppear").innerHTML = '<button onclick="secondFunction()">Some text here</button>';
-}
 
 function playRound(userChoice) {
 
@@ -48,7 +43,6 @@ function playRound(userChoice) {
         document.querySelector('.roundResult')
         .innerHTML = `you win! ${userChoice} beats ${computerChoice}`;
     }
-console.log(`${userScore} to ${computerScore}`);
 
 document.querySelector('.runningScore')
         .innerHTML = `${userScore} to ${computerScore}`;
