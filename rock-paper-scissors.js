@@ -15,22 +15,27 @@ function playRound(userChoice) {
 
     if (userChoice === "rock" && computerChoice === "paper") {
         computerScore++;
-        console.log(`you lose! ${computerChoice} beats ${userChoice}`);
+        document.querySelector('.roundResult')
+        .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
     } else if (userChoice === "paper" && computerChoice === "scissors") {
         computerScore++;
-        console.log(`you lose! ${computerChoice} beats ${userChoice}`);
+        document.querySelector('.roundResult')
+        .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
     } else if (userChoice === "scissors" && computerChoice === "rock") {
         computerScore++;
-        console.log(`you lose! ${computerChoice} beats ${userChoice}`);
+        document.querySelector('.roundResult')
+        .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
     } else if (userChoice === computerChoice) {    
-        console.log("it's a tie");
+        document.querySelector('.roundResult')
+        .innerHTML = `it's a tie`;
     } else {
         userScore++;
-        console.log(`you win! ${userChoice} beats ${computerChoice}`);
+        document.querySelector('.roundResult')
+        .innerHTML = `you win! ${userChoice} beats ${computerChoice}`;
     }
 console.log(`${userScore} to ${computerScore}`);
 
-document.querySelector('.rps-score')
+document.querySelector('.runningScore')
         .innerHTML = `${userScore} to ${computerScore}`;
 
 
