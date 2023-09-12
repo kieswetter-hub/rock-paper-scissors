@@ -1,14 +1,14 @@
 /* rock paper scissors */
 const gameOptions = ["rock", "paper", "scissors"];
 
+let userScore = 0;
+let computerScore = 0;
+
 /* function to randomly generate computer choice */
 function randomChoice (gameOptions) {    
     const randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
     return(randomChoice);
 }
-
-let userScore = 0;
-let computerScore = 0;
 
 /* function for playing the game */
 
@@ -23,15 +23,9 @@ function playRound(userChoice) {
         document.querySelector('.finalScore')
         .innerHTML = `You lost :(`;
         document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again?</button>';
-    } else if (userChoice === "rock" && computerChoice === "paper") {
-        computerScore++;
-        document.querySelector('.roundResult')
-        .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
-    } else if (userChoice === "paper" && computerChoice === "scissors") {
-        computerScore++;
-        document.querySelector('.roundResult')
-        .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
-    } else if (userChoice === "scissors" && computerChoice === "rock") {
+    } else if (userChoice === "rock" && computerChoice === "paper" || 
+               userChoice === "paper" && computerChoice === "scissors" || 
+               userChoice === "scissors" && computerChoice === "rock") {
         computerScore++;
         document.querySelector('.roundResult')
         .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
@@ -47,6 +41,8 @@ function playRound(userChoice) {
 document.querySelector('.runningScore')
         .innerHTML = `${userScore} to ${computerScore}`;
 }
+
+/* function for reset the game */
 
 function resetScore() {
     location.reload()
