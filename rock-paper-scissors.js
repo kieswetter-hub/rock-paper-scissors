@@ -11,7 +11,11 @@ function randomChoice (gameOptions) {
 let userScore = 0;
 let computerScore = 0;
 
-/* function for playing a single round */
+/* function for playing the game */
+
+function buttonFunction(){
+    document.getElementById("buttonAppear").innerHTML = '<button onclick="secondFunction()">Some text here</button>';
+}
 
 function playRound(userChoice) {
 
@@ -19,9 +23,11 @@ function playRound(userChoice) {
     if (userScore === 5) {
         document.querySelector('.finalScore')
         .innerHTML = `You won!`;
+        document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again?</button>';
     } else if (computerScore === 5){
         document.querySelector('.finalScore')
         .innerHTML = `You lost :(`;
+        document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again?</button>';
     } else if (userChoice === "rock" && computerChoice === "paper") {
         computerScore++;
         document.querySelector('.roundResult')
@@ -46,4 +52,8 @@ console.log(`${userScore} to ${computerScore}`);
 
 document.querySelector('.runningScore')
         .innerHTML = `${userScore} to ${computerScore}`;
+}
+
+function resetScore() {
+    location.reload()
 }
