@@ -42,7 +42,7 @@ document.querySelector('.runningScore')
         .innerHTML = `${userScore} to ${computerScore}`;
 }
 
-/* function for reset the game */
+/* function to reset the game */
 
 function resetScore() {
     location.reload()
