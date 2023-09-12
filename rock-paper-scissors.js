@@ -39,7 +39,7 @@ function playRound(userChoice) {
     }
 
 document.querySelector('.runningScore')
-        .innerHTML = `${userScore} to ${computerScore}`;
+        .innerHTML = `You: ${userScore} Computer: ${computerScore}`;
 }
 
 /* function to reset the game */

@@ -5,19 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <h1>Rock, Paper, Scissors</h1>
-    <button onclick="playRound('rock')">Rock</button>
-    <button onclick="playRound('paper')">Paper</button>
-    <button onclick="playRound('scissors')">Scissors</button>
 
-    <p class="roundResult"></p>
-    <p class="runningScore"></p>
-    <p class="finalScore"></p>
+            <p class="instructions">Try to beat the computer</p>
 
-    <span id="playAgain"></span>
+        <div class="game">
+            <button class="gameChoice" onclick="playRound('rock')"><img class="gameIcon" src="images/rock.png"/></button>
+            <button class="gameChoice" onclick="playRound('paper')"><img class="gameIcon" src="images/paper.png"/></button>
+            <button class="gameChoice" onclick="playRound('scissors')"><img class="gameIcon" src="images/scissors.png"/></button>
+        </div>
+
+            <p class="result roundResult"></p>
+            <p class="result runningScore"></p>
+            <p class="result finalScore"></p>
+
+
+            <span class="reset" id="playAgain"></span>
+
+
+    <div class="footer">
+        <p>created by <a href="https://github.com/kieswetter-hub">kieswetter-hub</a></p>
+        <img class="gitLogo" src="images/github-logo-white.png">
+    </div>
 
     <script src="rock-paper-scissors.js"></script>
+
 </body>
 </html>
