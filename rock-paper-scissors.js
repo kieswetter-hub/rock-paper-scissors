@@ -1,19 +1,28 @@
 /* rock paper scissors */
 const gameOptions = ["rock", "paper", "scissors"];
 
+
 /* function to randomly generate computer choice */
 function randomChoice (gameOptions) {    
     const randomChoice = gameOptions[Math.floor(Math.random()*gameOptions.length)];
     return(randomChoice);
 }
 
+let userScore = 0;
+let computerScore = 0;
+
 /* function for playing a single round */
 
 function playRound(userChoice) {
 
     const computerChoice = randomChoice(gameOptions);
-
-    if (userChoice === "rock" && computerChoice === "paper") {
+    if (userScore === 5) {
+        document.querySelector('.finalScore')
+        .innerHTML = `You won!`;
+    } else if (computerScore === 5){
+        document.querySelector('.finalScore')
+        .innerHTML = `You lost :(`;
+    } else if (userChoice === "rock" && computerChoice === "paper") {
         computerScore++;
         document.querySelector('.roundResult')
         .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
@@ -37,22 +46,4 @@ console.log(`${userScore} to ${computerScore}`);
 
 document.querySelector('.runningScore')
         .innerHTML = `${userScore} to ${computerScore}`;
-
-
-}
-
-let userScore = 0;
-let computerScore = 0;
-
-/* todo tomorrow: rewriting annoucment function
-something like
-if userScore or computerScore = 5 return winner */
-
-/* function for announcing the final score */
-function finalScore(userScore, computerScore) {
-    if (userScore > computerScore) {
-        console.log(`You won! ${userScore} to ${computerScore}`);
-    } else {
-        console.log(`You lost :( ${computerScore} to ${userScore}`)
-    }
 }
