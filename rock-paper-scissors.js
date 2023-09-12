@@ -29,6 +29,11 @@ function playRound(userChoice) {
         console.log(`you win! ${userChoice} beats ${computerChoice}`);
     }
 console.log(`${userScore} to ${computerScore}`);
+
+document.querySelector('.rps-score')
+        .innerHTML = `${userScore} to ${computerScore}`;
+
+
 }
 
 let userScore = 0;
@@ -46,7 +51,3 @@ function finalScore(userScore, computerScore) {
         console.log(`You lost :( ${computerScore} to ${userScore}`)
     }
 }
-
-
-
-
