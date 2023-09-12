@@ -16,26 +16,26 @@ function playRound(userChoice) {
 
     const computerChoice = randomChoice(gameOptions);
     if (userScore === 5) {
-        document.querySelector('.finalScore')
+        document.querySelector('.roundResult')
         .innerHTML = `You won!`;
-        document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again?</button>';
+        document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again</button>';
     } else if (computerScore === 5){
-        document.querySelector('.finalScore')
-        .innerHTML = `You lost :(`;
-        document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again?</button>';
+        document.querySelector('.roundResult')
+        .innerHTML = `The computer beat you.`;
+        document.getElementById("playAgain").innerHTML = '<button onclick="resetScore()">Play Again</button>';
     } else if (userChoice === "rock" && computerChoice === "paper" || 
                userChoice === "paper" && computerChoice === "scissors" || 
                userChoice === "scissors" && computerChoice === "rock") {
         computerScore++;
         document.querySelector('.roundResult')
-        .innerHTML = `you lose! ${computerChoice} beats ${userChoice}`;
+        .innerHTML = `You lost this round, ${computerChoice} beats ${userChoice}.`;
     } else if (userChoice === computerChoice) {    
         document.querySelector('.roundResult')
-        .innerHTML = `it's a tie`;
+        .innerHTML = `It's a tie.`;
     } else {
         userScore++;
         document.querySelector('.roundResult')
-        .innerHTML = `you win! ${userChoice} beats ${computerChoice}`;
+        .innerHTML = `You won this round, ${userChoice} beats ${computerChoice}.`;
     }
 
 document.querySelector('.runningScore')
